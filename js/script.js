@@ -87,66 +87,76 @@
 // alert(somma);
 
 
-// JSnack 4
-// In un array sono contenuti i nomi degli invitati alla festa del grande Gatsby,
-// chiedi all’utente il suo nome e
-//comunicagli se può partecipare o no alla festa.
-
-// Creare array con lista degli invitati
-var listaInvitati = ['Linda','Alice','Alessandro','Sara','Franco','Sandra'];
-
-// Chiedere all'utente il suo nome
-var nomeUtente = prompt('Scrivi il tuo nome con la lettera maiuscola');
-
-// Controllo dei dati immessi dall'utente
-while (nomeUtente.length == 0 || (!isNaN(parseInt(nomeUtente)))) {
-  nomeUtente = prompt('Errore: scrivi il tuo nome con la lettera maiuscola');
-}
-
-// Controllare se il suo nome è nella lista ciclo for
-// var controlloNome = false;
-// console.log(controlloNome);
-// for (i = 0; i < listaInvitati.length; i++) {
+// // JSnack 4
+// // In un array sono contenuti i nomi degli invitati alla festa del grande Gatsby,
+// // chiedi all’utente il suo nome e
+// //comunicagli se può partecipare o no alla festa.
+//
+// // Creare array con lista degli invitati
+// var listaInvitati = ['Linda','Alice','Alessandro','Sara','Franco','Sandra'];
+//
+// // Chiedere all'utente il suo nome
+// var nomeUtente = prompt('Scrivi il tuo nome con la lettera maiuscola');
+//
+// // Controllo dei dati immessi dall'utente
+// while (nomeUtente.length == 0 || (!isNaN(parseInt(nomeUtente)))) {
+//   nomeUtente = prompt('Errore: scrivi il tuo nome con la lettera maiuscola');
+// }
+//
+// // Controllare se il suo nome è nella lista ciclo for
+// // var controlloNome = false;
+// // console.log(controlloNome);
+// // for (i = 0; i < listaInvitati.length; i++) {
+// //   if (nomeUtente == listaInvitati[i]) {
+// //     controlloNome = true;
+// //     console.log(controlloNome);
+// //   }
+// // }
+//
+// // Controllare se il suo nome è nella lista ciclo while
+// var i = 0;
+// controlloNome = false;
+// while (i < listaInvitati.length) {
 //   if (nomeUtente == listaInvitati[i]) {
 //     controlloNome = true;
-//     console.log(controlloNome);
 //   }
+//   i++;
+// }
+//
+// // Comunicare all'utente la risposta
+// if (controlloNome) {
+//   alert('Puoi entrare');
+// } else {
+//   alert ('Non puoi entrare');
 // }
 
-// Controllare se il suo nome è nella lista ciclo while
-var i = 0;
-controlloNome = false;
-while (i < listaInvitati.length) {
-  if (nomeUtente == listaInvitati[i]) {
-    controlloNome = true;
-  }
-  i++;
-}
-
-// Comunicare all'utente la risposta
-if (controlloNome) {
-  alert('Puoi entrare');
-} else {
-  alert ('Non puoi entrare');
-}
-
-// Snack 4
+// JSnack 5
 // Chiedi un numero di 4 cifre all’utente e
 //calcola la somma di tutte le cifre che compongono il numero.
 
 // Chiedi all'utente un numero di 4 cifre
-// var numero = prompt('Scrivi un numero di 4 cifre');
-// console.log(numero);
-//
-// // Trasforma il numero in un array
-// var arrayNumero = numero.split('');
-// console.log(arrayNumero);
-//
-// // Calcola la somma
+var numero = prompt('Scrivi un numero di 4 cifre');
+while (isNaN(parseInt(numero)) || numero.length < 4) {
+  numero = prompt('Scrivi un numero di 4 cifre');
+}
+
+// Trasforma il numero in un array
+var arrayNumero = numero.split('');
+console.log(arrayNumero);
+
+// // Calcola la somma con ciclo for
 // var somma = 0;
 // for (var i = 0; i < arrayNumero.length; i++) {
 //   somma += parseInt(arrayNumero[i]);
 // }
-//
-// // Output
-// console.log('La somma è: ' + somma);
+
+// Calcola la somma con ciclo while
+var somma = 0;
+var i = 0;
+while (i < arrayNumero.length) {
+  somma += parseInt(arrayNumero[i]);
+  i++;
+}
+
+// Output
+alert('La somma è: ' + somma);
