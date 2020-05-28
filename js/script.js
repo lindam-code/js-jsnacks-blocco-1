@@ -58,7 +58,7 @@
 
 // JSnack 3
 // Il software deve chiedere per 5 volte all’utente di inserire un numero.
-var somma = 0;
+// var somma = 0;
 
 // Ciclo for: fare la somma dei numeri inseriti
 // for (i = 0; i < 5; i++) {
@@ -71,60 +71,64 @@ var somma = 0;
 // }
 
 // // Ciclo while: fare la somma dei numeri inseriti
-var i = 0;
-
-while (i < 5) {
-  var numeroUtente = parseInt(prompt('Scrivi un altro numero'));
-    while (isNaN(numeroUtente)) {
-      numeroUtente = parseInt(prompt('Scrivi un altro numero'));
-    }
-  console.log(numeroUtente);
-  somma = somma + numeroUtente;
-  i++;
-}
-
-// Il programma stampa la somma di tutti i numeri inseriti.
-alert(somma);
-
-//
-// // TERZO SNACK
-// // In un array sono contenuti i nomi degli invitati alla festa del grande Gatsby,
-// // chiedi all’utente il suo nome e
-// //comunicagli se può partecipare o no alla festa.
-//
-// // Creare array con lista degli invitati
-// var listaInvitati = ['Linda','Alice','Alessandro','Sara','Franco','Sandra'];
-// // console.log(listaInvitati);
-//
-// // Chiedere all'utente il suo nome
-// var nomeUtente = prompt('Scivi il tuo nome con la lettera maiuscola');
-// // console.log(nomeUtente);
-//
-// // // Controllare se il suo nome è nella lista ciclo for
-// // var controlloNome = false;
-// // console.log(controlloNome);
-// // for (i = 0; i < listaInvitati.length; i++) {
-// //   if (nomeUtente == listaInvitati[i]) {
-// //     controlloNome = true;
-// //     console.log(controlloNome);
-// //   }
-// // }
-//
-// // Controllare se il suo nome è nella lista ciclo for
 // var i = 0;
-// while (i < listaInvitati.length) {
 //
-//
+// while (i < 5) {
+//   var numeroUtente = parseInt(prompt('Scrivi un altro numero'));
+//     while (isNaN(numeroUtente)) {
+//       numeroUtente = parseInt(prompt('Scrivi un altro numero'));
+//     }
+//   console.log(numeroUtente);
+//   somma = somma + numeroUtente;
 //   i++;
 // }
 //
-//
-// // Comunicare all'utente la risposta
-// if (controlloNome) {
-//   alert('Puoi entrare');
-// } else {
-//   alert ('Non puoi entrare');
+// // Il programma stampa la somma di tutti i numeri inseriti.
+// alert(somma);
+
+
+// JSnack 4
+// In un array sono contenuti i nomi degli invitati alla festa del grande Gatsby,
+// chiedi all’utente il suo nome e
+//comunicagli se può partecipare o no alla festa.
+
+// Creare array con lista degli invitati
+var listaInvitati = ['Linda','Alice','Alessandro','Sara','Franco','Sandra'];
+
+// Chiedere all'utente il suo nome
+var nomeUtente = prompt('Scrivi il tuo nome con la lettera maiuscola');
+
+// Controllo dei dati immessi dall'utente
+while (nomeUtente.length == 0 || (!isNaN(parseInt(nomeUtente)))) {
+  nomeUtente = prompt('Errore: scrivi il tuo nome con la lettera maiuscola');
+}
+
+// Controllare se il suo nome è nella lista ciclo for
+// var controlloNome = false;
+// console.log(controlloNome);
+// for (i = 0; i < listaInvitati.length; i++) {
+//   if (nomeUtente == listaInvitati[i]) {
+//     controlloNome = true;
+//     console.log(controlloNome);
+//   }
 // }
+
+// Controllare se il suo nome è nella lista ciclo while
+var i = 0;
+controlloNome = false;
+while (i < listaInvitati.length) {
+  if (nomeUtente == listaInvitati[i]) {
+    controlloNome = true;
+  }
+  i++;
+}
+
+// Comunicare all'utente la risposta
+if (controlloNome) {
+  alert('Puoi entrare');
+} else {
+  alert ('Non puoi entrare');
+}
 
 // Snack 4
 // Chiedi un numero di 4 cifre all’utente e
