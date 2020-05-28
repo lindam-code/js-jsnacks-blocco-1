@@ -1,52 +1,60 @@
-// JSnack 1
-// L’utente inserisce due numeri in successione, con due prompt.
-// Il software stampa il maggiore.
+// // JSnack 1
+// // L’utente inserisce due numeri in successione, con due prompt.
+// // Il software stampa il maggiore.
+//
+// // Chiedere all'utente due numeri
+// var primoNumero = parseInt(prompt('Scrivi il primo numero'));
+// var secondoNumero = parseInt(prompt('Scrivi il secondo numero'));
+//
+// var messaggio = 'I numeri sono uguali';
+//
+// // Verifica dei dati inseriti dall'utente
+// while (isNaN(primoNumero)) {
+//   primoNumero = parseInt(prompt('Errore primo numero non valido: riscrivi il primo numero'));
+// }
+// while (isNaN(secondoNumero)) {
+//   secondoNumero = parseInt(prompt('Errore secondo numero non valido: riscrivi il secondo numero'));
+// }
+//
+// // Logica per veder quale si il maggiore
+// if (primoNumero > secondoNumero) {
+//   messaggio = primoNumero;
+// } else if (secondoNumero > primoNumero) {
+//   messaggio = secondoNumero;
+// }
+//
+// // Stampare la risposta
+// alert(messaggio);
 
-// Chiedere all'utente due numeri
-var primoNumero = parseInt(prompt('Scrivi il primo numero'));
-var secondoNumero = parseInt(prompt('Scrivi il secondo numero'));
+// JSnack 2
+// L’utente inserisce due parole in successione, con due prompt.
+var primaParola = prompt('Scrivi la prima parola');
+var secondaParola = prompt('Scrivi la seconda parola');
 
-console.log(primoNumero);
-console.log(secondoNumero);
-var messaggio = 'I numeri sono uguali';
+var stampaParole = 'Le parole hanno stessa lunghezza';
 
 // Verifica dei dati inseriti dall'utente
-
-
-while (isNaN(primoNumero)) {
-  primoNumero = parseInt(prompt('Errore primo numero non valido: riscrivi il primo numero'));
+while (primaParola.length == 0 || (!isNaN(parseInt(primaParola)))) {
+  primaParola = prompt('Errore: Scrivi la prima parola');
 }
-while (isNaN(secondoNumero)) {
-  secondoNumero = parseInt(prompt('Errore secondo numero non valido: riscrivi il secondo numero'));
+while (secondaParola.length == 0 || (!isNaN(parseInt(secondaParola))))  {
+  secondaParola = prompt('Errore: Scrivi la seconda parola');
 }
 
-
-// Logica per veder quale si il maggiore
-if (primoNumero > secondoNumero) {
-  messaggio = primoNumero;
-} else if (secondoNumero > primoNumero) {
-  messaggio = secondoNumero;
+// Logica per stabilire quale parola sia più lunga.
+if (primaParola.length < secondaParola.length) {
+  stampaParole = primaParola + ' < ' + secondaParola
+  // console.log(primaParola);
+  // console.log(secondaParola);
+} else if (secondaParola.length < primaParola.length) {
+  stampaParole = secondaParola + ' < ' + primaParola
+  // console.log(secondaParola);
+  // console.log(primaParola);
 }
 
-// Stampare la risposta
-alert(messaggio);
+// Stampare prima la parola più corta, poi la parola più lunga.
+alert(stampaParole);
 
-
-
-
-// // PRIMO SNACK
-// // L’utente inserisce due parole in successione, con due prompt.
-// var primaParola = prompt('Scrivi la prima parola');
-// var secondaParola = prompt('Scrivi la seconda parola');
-//
-// // Il software stampa prima la parola più corta, poi la parola più lunga.
-// if (primaParola.length < secondaParola.length) {
-//   console.log(primaParola);
-//   console.log(secondaParola);
-// } else if (secondaParola.length < primaParola.length) {
-//   console.log(secondaParola);
-//   console.log(primaParola);
-// }
 
 // // SECONDO SNACK
 // // Il software deve chiedere per 5 volte all’utente di inserire un numero.
