@@ -26,59 +26,66 @@
 // // Stampare la risposta
 // alert(messaggio);
 
-// JSnack 2
-// L’utente inserisce due parole in successione, con due prompt.
-var primaParola = prompt('Scrivi la prima parola');
-var secondaParola = prompt('Scrivi la seconda parola');
-
-var stampaParole = 'Le parole hanno stessa lunghezza';
-
-// Verifica dei dati inseriti dall'utente
-while (primaParola.length == 0 || (!isNaN(parseInt(primaParola)))) {
-  primaParola = prompt('Errore: Scrivi la prima parola');
-}
-while (secondaParola.length == 0 || (!isNaN(parseInt(secondaParola))))  {
-  secondaParola = prompt('Errore: Scrivi la seconda parola');
-}
-
-// Logica per stabilire quale parola sia più lunga.
-if (primaParola.length < secondaParola.length) {
-  stampaParole = primaParola + ' < ' + secondaParola
-  // console.log(primaParola);
-  // console.log(secondaParola);
-} else if (secondaParola.length < primaParola.length) {
-  stampaParole = secondaParola + ' < ' + primaParola
-  // console.log(secondaParola);
-  // console.log(primaParola);
-}
-
-// Stampare prima la parola più corta, poi la parola più lunga.
-alert(stampaParole);
-
-
-// // SECONDO SNACK
-// // Il software deve chiedere per 5 volte all’utente di inserire un numero.
-// var somma = 0;
+// // JSnack 2
+// // L’utente inserisce due parole in successione, con due prompt.
+// var primaParola = prompt('Scrivi la prima parola');
+// var secondaParola = prompt('Scrivi la seconda parola');
 //
-// // Ciclo for: fare la somma dei numeri inseriti
-// // for (i = 0; i < 5; i++) {
-// //   var numeroUtente = parseInt(prompt('Scrivi un altro numero'));
-// //   console.log(numeroUtente);
-// //   somma = somma + numeroUtente;
-// // }
-// //
-// // // Ciclo while: fare la somma dei numeri inseriti
-// // var i = 0;
-// // while (i < 5) {
-// //   var numeroUtente = parseInt(prompt('Scrivi un altro numero'));
-// //   console.log(numeroUtente);
-// //   somma = somma + numeroUtente;
-// //   i++;
-// // }
-// //
-// // // Il programma stampa la somma di tutti i numeri inseriti.
-// // alert(somma);
+// var stampaParole = 'Le parole hanno stessa lunghezza';
 //
+// // Verifica dei dati inseriti dall'utente
+// while (primaParola.length == 0 || (!isNaN(parseInt(primaParola)))) {
+//   primaParola = prompt('Errore: Scrivi la prima parola');
+// }
+// while (secondaParola.length == 0 || (!isNaN(parseInt(secondaParola))))  {
+//   secondaParola = prompt('Errore: Scrivi la seconda parola');
+// }
+//
+// // Logica per stabilire quale parola sia più lunga.
+// if (primaParola.length < secondaParola.length) {
+//   stampaParole = primaParola + ' < ' + secondaParola
+//   // console.log(primaParola);
+//   // console.log(secondaParola);
+// } else if (secondaParola.length < primaParola.length) {
+//   stampaParole = secondaParola + ' < ' + primaParola
+//   // console.log(secondaParola);
+//   // console.log(primaParola);
+// }
+//
+// // Stampare prima la parola più corta, poi la parola più lunga.
+// alert(stampaParole);
+
+
+// JSnack 3
+// Il software deve chiedere per 5 volte all’utente di inserire un numero.
+var somma = 0;
+
+// Ciclo for: fare la somma dei numeri inseriti
+// for (i = 0; i < 5; i++) {
+//   var numeroUtente = parseInt(prompt('Scrivi un altro numero'));
+//   while (isNaN(numeroUtente)) {
+//     numeroUtente = parseInt(prompt('Scrivi un altro numero'));
+//   }
+//   console.log(numeroUtente);
+//   somma = somma + numeroUtente;
+// }
+
+// // Ciclo while: fare la somma dei numeri inseriti
+var i = 0;
+
+while (i < 5) {
+  var numeroUtente = parseInt(prompt('Scrivi un altro numero'));
+    while (isNaN(numeroUtente)) {
+      numeroUtente = parseInt(prompt('Scrivi un altro numero'));
+    }
+  console.log(numeroUtente);
+  somma = somma + numeroUtente;
+  i++;
+}
+
+// Il programma stampa la somma di tutti i numeri inseriti.
+alert(somma);
+
 //
 // // TERZO SNACK
 // // In un array sono contenuti i nomi degli invitati alla festa del grande Gatsby,
