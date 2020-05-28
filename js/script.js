@@ -1,3 +1,30 @@
+// JSnack 1
+// L’utente inserisce due numeri in successione, con due prompt.
+// Il software stampa il maggiore.
+
+// Chiedere all'utente due numeri
+var primoNumero = parseInt(prompt('Scrivi un numero'));
+var secondoNumero = parseInt(prompt('Scrivi un altro numero'));
+
+console.log(secondoNumero);
+var messaggio = 'I numeri sono uguali';
+
+// Verifica dei dati inseriti dall'utente
+
+
+// Logica per veder quale si il maggiore
+if (primoNumero > secondoNumero) {
+  messaggio = primoNumero;
+} else if (secondoNumero > primoNumero) {
+  messaggio = secondoNumero;
+}
+
+// Stampare la risposta
+alert(messaggio);
+
+
+
+
 // // PRIMO SNACK
 // // L’utente inserisce due parole in successione, con due prompt.
 // var primaParola = prompt('Scrivi la prima parola');
@@ -80,18 +107,18 @@
 //calcola la somma di tutte le cifre che compongono il numero.
 
 // Chiedi all'utente un numero di 4 cifre
-var numero = prompt('Scrivi un numero di 4 cifre');
-console.log(numero);
-
-// Trasforma il numero in un array
-var arrayNumero = numero.split('');
-console.log(arrayNumero);
-
-// Calcola la somma
-var somma = 0;
-for (var i = 0; i < arrayNumero.length; i++) {
-  somma += parseInt(arrayNumero[i]);
-}
-
-// Output
-console.log('La somma è: ' + somma);
+// var numero = prompt('Scrivi un numero di 4 cifre');
+// console.log(numero);
+//
+// // Trasforma il numero in un array
+// var arrayNumero = numero.split('');
+// console.log(arrayNumero);
+//
+// // Calcola la somma
+// var somma = 0;
+// for (var i = 0; i < arrayNumero.length; i++) {
+//   somma += parseInt(arrayNumero[i]);
+// }
+//
+// // Output
+// console.log('La somma è: ' + somma);
