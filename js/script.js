@@ -3,13 +3,22 @@
 // Il software stampa il maggiore.
 
 // Chiedere all'utente due numeri
-var primoNumero = parseInt(prompt('Scrivi un numero'));
-var secondoNumero = parseInt(prompt('Scrivi un altro numero'));
+var primoNumero = parseInt(prompt('Scrivi il primo numero'));
+var secondoNumero = parseInt(prompt('Scrivi il secondo numero'));
 
+console.log(primoNumero);
 console.log(secondoNumero);
 var messaggio = 'I numeri sono uguali';
 
 // Verifica dei dati inseriti dall'utente
+
+
+while (isNaN(primoNumero)) {
+  primoNumero = parseInt(prompt('Errore primo numero non valido: riscrivi il primo numero'));
+}
+while (isNaN(secondoNumero)) {
+  secondoNumero = parseInt(prompt('Errore secondo numero non valido: riscrivi il secondo numero'));
+}
 
 
 // Logica per veder quale si il maggiore
