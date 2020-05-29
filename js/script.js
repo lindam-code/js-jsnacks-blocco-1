@@ -136,12 +136,16 @@
 
 // Chiedi all'utente un numero di 4 cifre
 var numero = prompt('Scrivi un numero di 4 cifre');
-while (isNaN(parseInt(numero)) || numero.length < 4) {
-  numero = prompt('Scrivi un numero di 4 cifre');
+console.log(numero);
+var numeroNormalizzato = numero.trim();
+console.log(numeroNormalizzato);
+
+while (isNaN(numeroNormalizzato) || numeroNormalizzato.length != 4) {
+  numeroNormalizzato = prompt('Errore: scrivi un numero di 4 cifre');
 }
 
 // Trasforma il numero in un array
-var arrayNumero = numero.split('');
+var arrayNumero = numeroNormalizzato.split('');
 console.log(arrayNumero);
 
 // // Calcola la somma con ciclo for
