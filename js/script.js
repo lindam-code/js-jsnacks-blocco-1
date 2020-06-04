@@ -130,37 +130,67 @@
 //   alert ('Non puoi entrare');
 // }
 
-// JSnack 5
-// Chiedi un numero di 4 cifre all’utente e
-//calcola la somma di tutte le cifre che compongono il numero.
-
-// Chiedi all'utente un numero di 4 cifre
-var numero = prompt('Scrivi un numero di 4 cifre');
-console.log(numero);
-var numeroNormalizzato = numero.trim();
-console.log(numeroNormalizzato);
-
-while (isNaN(numeroNormalizzato) || numeroNormalizzato.length != 4) {
-  numeroNormalizzato = prompt('Errore: scrivi un numero di 4 cifre');
-}
-
-// Trasforma il numero in un array
-var arrayNumero = numeroNormalizzato.split('');
-console.log(arrayNumero);
-
-// // Calcola la somma con ciclo for
-// var somma = 0;
-// for (var i = 0; i < arrayNumero.length; i++) {
-//   somma += parseInt(arrayNumero[i]);
+// // JSnack 5
+// // Chiedi un numero di 4 cifre all’utente e
+// //calcola la somma di tutte le cifre che compongono il numero.
+//
+// // Chiedi all'utente un numero di 4 cifre
+// var numero = prompt('Scrivi un numero di 4 cifre');
+// console.log(numero);
+// var numeroNormalizzato = numero.trim();
+// console.log(numeroNormalizzato);
+//
+// while (isNaN(numeroNormalizzato) || numeroNormalizzato.length != 4) {
+//   numeroNormalizzato = prompt('Errore: scrivi un numero di 4 cifre');
 // }
+//
+// // Trasforma il numero in un array
+// var arrayNumero = numeroNormalizzato.split('');
+// console.log(arrayNumero);
+//
+// // // Calcola la somma con ciclo for
+// // var somma = 0;
+// // for (var i = 0; i < arrayNumero.length; i++) {
+// //   somma += parseInt(arrayNumero[i]);
+// // }
+//
+// // Calcola la somma con ciclo while
+// var somma = 0;
+// var i = 0;
+// while (i < arrayNumero.length) {
+//   somma += parseInt(arrayNumero[i]);
+//   i++;
+// }
+//
+// // Output
+// alert('La somma è: ' + somma);
 
-// Calcola la somma con ciclo while
-var somma = 0;
-var i = 0;
-while (i < arrayNumero.length) {
-  somma += parseInt(arrayNumero[i]);
-  i++;
+
+
+// JSnack 6
+// Fai inserire un numero, che chiameremo N, all’utente.
+// Genera N array, ognuno formato da 10 numeri casuali tra 1 e 100.
+// Ogni volta che ne crei uno, stampalo a schermo.
+
+// Chiedi all'utente il numero N
+var N = parseInt(prompt('Dammi un numero'));
+
+// Genera N array formati da 10 numeri casuali da 1 a 100
+for (var i = 0; i < N; i++) {
+  var arrayNumeroCasuale = creaArrayNumeroCasuale();
+  console.log(arrayNumeroCasuale);
 }
 
-// Output
-alert('La somma è: ' + somma);
+// FUNZIONI
+// Funzione che crea array di numeri arrayNumeriCasuali
+// Restituisce un array di 10 numeri casuali tra 1 e 100
+function creaArrayNumeroCasuale() {
+  var arrayNumeriCasuali = [];
+  for (var i = 0; i < 10; i++) {
+    var numeroCasuale = Math.floor(Math.random() * 100) + 1;
+    if (numeroCasuale != arrayNumeriCasuali[i]) {
+      arrayNumeriCasuali.push(numeroCasuale);
+    }
+  }
+  return arrayNumeriCasuali;
+}
