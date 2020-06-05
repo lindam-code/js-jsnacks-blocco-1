@@ -1,3 +1,5 @@
+// BLOCCO 1
+
 // // JSnack 1
 // // L’utente inserisce due numeri in successione, con due prompt.
 // // Il software stampa il maggiore.
@@ -165,32 +167,118 @@
 // // Output
 // alert('La somma è: ' + somma);
 
+// BLOCCO 2
 
+// JSnack 2
+// Generatore di “nomi cognomi” casuali: prendendo una lista di nomi e una lista di cognomi,
+// Gatsby vuole generare una falsa lista di invitati.
+//
+// // Array dei nomi e dei cognomi
+// var nomi = ['Mario', 'Franca', 'Sara', 'Luca', 'Linda'];
+// var cognomi = ['Govoni', 'Rossi', 'Doro', 'Minotti', 'Bianchi', 'Invernizzi'];
+//
+// // Chiedi all'utente quando deve essere lunga la lista degli invitati
+// var numeroListaInvitati = parseInt(prompt('Quanto lunga deve essere la lista?'));
+//
+// // Creare lista invitati con nomi e cognomi presi a caso dagli array
+// // Usa una funzione che pesca un elemento random da un array
+// var listaInvitati = [];
+// for (var i = 0; i < numeroListaInvitati; i++) {
+//   listaInvitati.push(pescaElemento(nomi) + ' ' + pescaElemento(cognomi));
+// }
+// console.log(listaInvitati);
+//
+// // FUNZIONI
+// // Funzione per pescare un elemento random da un array
+// // Argomento: array da cui pescare elemento
+// // Restituisce: elemento in una lista
+// function pescaElemento(array)  {
+//   var elemento = '';
+//   var indice = Math.floor(Math.random() * array.length);
+//     elemento = array[indice];
+//   return elemento;
+// }
 
-// JSnack 6
-// Fai inserire un numero, che chiameremo N, all’utente.
-// Genera N array, ognuno formato da 10 numeri casuali tra 1 e 100.
-// Ogni volta che ne crei uno, stampalo a schermo.
+// // JSnack 4
+// // Crea due array che hanno un numero di elementi diversi.
+// // Aggiungi elementi casuali all’array che ha meno elementi, fino a quando ne avrà tanti quanti l’altro.
+//
+// // Creare array di due lunghezze diverse
+// var arrayUno = [25,2,8,74,5,2];
+// var arrayDue = [8,4,89];
+// console.log('Pima del ciclo: ' + arrayUno);
+// console.log('Pima del ciclo: ' + arrayDue);
+//
+// // Controlla quale dei due è più corto
+// // Aggiungi elementi a quello più corto finchè diventa lungo come l'altro
+// if (arrayUno.length < arrayDue.length) {
+//   var arrayUno = popolaArray(arrayUno, arrayDue.length);
+// } else if (arrayDue.length < arrayUno.length){
+//   var arrayDue = popolaArray(arrayDue, arrayUno.length);
+// } else {
+//   console.log('gli array sono lunghi uguali');
+// }
+// console.log('Dopo il ciclo: ' + arrayUno);
+// console.log('Dopo il ciclo: ' + arrayDue);
+//
+// // FUNZIONI
+// // Funzione per aggiungere un elemento ad un array finchè non raggiunge una certa lunghezza
+// // Argomenti: array da popolare, lunghezza che deve raggiungere l'array
+// // Restituisce: l'array della lunghezza giusta
+// function popolaArray (array, lunghezza) {
+//   while (array.length < lunghezza) {
+//     var elementoCasuale = Math.floor(Math.random() * 10);
+//     array.push(elementoCasuale);
+//   }
+//   return array;
+// }
 
-// Chiedi all'utente il numero N
-var N = parseInt(prompt('Dammi un numero'));
+// BLOCCO 3
 
-// Genera N array formati da 10 numeri casuali da 1 a 100
-for (var i = 0; i < N; i++) {
-  var arrayNumeroCasuale = creaArrayNumeroCasuale();
-  console.log(arrayNumeroCasuale);
-}
+// // JSnack 2
+// // Fai inserire un numero, che chiameremo N, all’utente.
+// // Genera N array, ognuno formato da 10 numeri casuali tra 1 e 100.
+// // Ogni volta che ne crei uno, stampalo a schermo.
+//
+// // Chiedi all'utente il numero N
+// var N = parseInt(prompt('Dammi un numero e ti genero tot array di numeri casuali'));
+//
+// // Genera N array formati da 10 numeri casuali da 1 a 100
+// for (var i = 0; i < N; i++) {
+//   var arrayNumeroCasuale = creaArrayNumeroCasuale();
+//   console.log(arrayNumeroCasuale);
+// }
+//
+// // FUNZIONI
+// // Funzione che crea array di numeri un array di numeri casuali diversi tra loro
+// // Restituisce un array di 10 numeri casuali tra 1 e 100 diversi tra loro
+// function creaArrayNumeroCasuale() {
+//   var arrayNumeriCasuali = [];
+//   for (var i = 0; i < 10; i++) {
+//     var numeroCasuale = Math.floor(Math.random() * 100) + 1;
+//     if (numeroCasuale != arrayNumeriCasuali[i]) {
+//       arrayNumeriCasuali.push(numeroCasuale);
+//     }
+//   }
+//   return arrayNumeriCasuali;
+// }
 
-// FUNZIONI
-// Funzione che crea array di numeri arrayNumeriCasuali
-// Restituisce un array di 10 numeri casuali tra 1 e 100
-function creaArrayNumeroCasuale() {
-  var arrayNumeriCasuali = [];
-  for (var i = 0; i < 10; i++) {
-    var numeroCasuale = Math.floor(Math.random() * 100) + 1;
-    if (numeroCasuale != arrayNumeriCasuali[i]) {
-      arrayNumeriCasuali.push(numeroCasuale);
-    }
-  }
-  return arrayNumeriCasuali;
-}
+// // JSnack 3
+// // Crea due tag div con due id diversi: un div avrà il testo colorato di rosso mentre l’altro di verde.
+// // Partendo da un array di numeri, stampiamo nell’id rosso i numeri dispari e in verde i numeri pari.
+//
+// // Creare i tag div con colori diversi del testo e associarli al js
+// var pari = document.getElementById('pari');
+// var dispari = document.getElementById('dispari');
+//
+// // Creare array di numeri ramdom
+// var arrayNumeri = [25,84,73,89,40,8,2,3,5,7,4,9];
+//
+// // Ciclo che stampa i numeri pari nel div verde e i numeri dispari nel div rosso
+// for (var i = 0; i < arrayNumeri.length; i++) {
+//   if (arrayNumeri[i] % 2 === 0) {
+//     pari.innerHTML += ' ' + arrayNumeri[i];
+//   } else {
+//     dispari.innerHTML += ' ' + arrayNumeri[i];
+//   }
+// }
