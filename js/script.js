@@ -290,14 +290,30 @@
 // o tra le riserve.
 // Quando si clicca sul button “Aggiungi” il nome viene aggiunto nella lista dei titolari
 // se l’utente ha scelto titolari, altrimenti tra le riserve.
-$('.submit').click(
-    function() {
-      var nomeGiocatore = $('.nome-giocatore').val();
-      var ruoloGiocatore = $('.ruolo-giocatore').val();
+$(document).ready(
+    function(){
 
-      if (ruoloGiocatore === 'titolare') {
-         $('.lista-titolari').append('<li>' + nomeGiocatore + '</li>');
-      } else if (ruoloGiocatore === 'riserva') {
-          $('.lista-riserve').append('<li>' + nomeGiocatore + '</li>');
-      }
-});
+      $('.submit').click(
+          function() {
+            var nomeGiocatore = $('.nome-giocatore').val();
+            var ruoloGiocatore = $('.ruolo-giocatore').val();
+            // Scrive il nome del giocatore nel lista scelta dall'utente
+            if (ruoloGiocatore === 'titolare') {
+                $('.lista-titolari').append('<li>' + nomeGiocatore + '<button class="delete-item">Cancella</button></li>');
+            } else if (ruoloGiocatore === 'riserva') {
+                $('.lista-riserve').append('<li>' + nomeGiocatore + '<button class="delete-item">Cancella</button></li>');
+            }
+          }
+      );
+
+      // Cliccando il tasto cancella rimuove il nome dalla listaInvitati
+      // Non posso usare .click perchè esso associa l'evento agli elementi presenti nell'html
+      // perciò non funzionerebbe con i nuovi nomi e bottoni della lista che creiamo ogni volta
+      // che l'utente clicca submit
+      $(document).on('click', '.delete-item',
+          function(){
+              $(this).parent().remove();
+          }
+      );
+    }
+)
