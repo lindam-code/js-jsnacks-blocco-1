@@ -1,8 +1,14 @@
 /* Blocco 3 JSnack 3 */
-.red {
+/* .red {
   color: red;
 }
 
 .green {
   color: green;
+} */
+
+.square {
+  height: 200px;
+  width: 200px;
+  border: 1px solid blue;
 }

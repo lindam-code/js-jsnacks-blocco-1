@@ -282,3 +282,22 @@
 //     dispari.innerHTML += ' ' + arrayNumeri[i];
 //   }
 // }
+
+// Blocco 4
+// JSnack 5
+// L’utente ha a disposizione un input in cui inserire un nome di un giocatore
+// e una select tramite la quale puoi scegliere se il giocatore va inserito tra i titolari
+// o tra le riserve.
+// Quando si clicca sul button “Aggiungi” il nome viene aggiunto nella lista dei titolari
+// se l’utente ha scelto titolari, altrimenti tra le riserve.
+$('.submit').click(
+    function() {
+      var nomeGiocatore = $('.nome-giocatore').val();
+      var ruoloGiocatore = $('.ruolo-giocatore').val();
+
+      if (ruoloGiocatore === 'titolare') {
+         $('.lista-titolari').append('<li>' + nomeGiocatore + '</li>');
+      } else if (ruoloGiocatore === 'riserva') {
+          $('.lista-riserve').append('<li>' + nomeGiocatore + '</li>');
+      }
+});
