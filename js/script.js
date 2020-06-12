@@ -290,30 +290,55 @@
 // o tra le riserve.
 // Quando si clicca sul button “Aggiungi” il nome viene aggiunto nella lista dei titolari
 // se l’utente ha scelto titolari, altrimenti tra le riserve.
-$(document).ready(
-    function(){
+// $(document).ready(
+//     function(){
+//
+//       $('.submit').click(
+//           function() {
+//             var nomeGiocatore = $('.nome-giocatore').val();
+//             var ruoloGiocatore = $('.ruolo-giocatore').val();
+//             // Scrive il nome del giocatore nel lista scelta dall'utente
+//             if (ruoloGiocatore === 'titolare') {
+//                 $('.lista-titolari').append('<li>' + nomeGiocatore + '<button class="delete-item">Cancella</button></li>');
+//             } else if (ruoloGiocatore === 'riserva') {
+//                 $('.lista-riserve').append('<li>' + nomeGiocatore + '<button class="delete-item">Cancella</button></li>');
+//             }
+//           }
+//       );
+//
+//       // Cliccando il tasto cancella rimuove il nome dalla listaInvitati
+//       // Non posso usare .click perchè esso associa l'evento agli elementi presenti nell'html
+//       // perciò non funzionerebbe con i nuovi nomi e bottoni della lista che creiamo ogni volta
+//       // che l'utente clicca submit
+//       $(document).on('click', '.delete-item',
+//           function(){
+//               $(this).parent().remove();
+//           }
+//       );
+//     }
+// )
 
-      $('.submit').click(
-          function() {
-            var nomeGiocatore = $('.nome-giocatore').val();
-            var ruoloGiocatore = $('.ruolo-giocatore').val();
-            // Scrive il nome del giocatore nel lista scelta dall'utente
-            if (ruoloGiocatore === 'titolare') {
-                $('.lista-titolari').append('<li>' + nomeGiocatore + '<button class="delete-item">Cancella</button></li>');
-            } else if (ruoloGiocatore === 'riserva') {
-                $('.lista-riserve').append('<li>' + nomeGiocatore + '<button class="delete-item">Cancella</button></li>');
-            }
-          }
-      );
 
-      // Cliccando il tasto cancella rimuove il nome dalla listaInvitati
-      // Non posso usare .click perchè esso associa l'evento agli elementi presenti nell'html
-      // perciò non funzionerebbe con i nuovi nomi e bottoni della lista che creiamo ogni volta
-      // che l'utente clicca submit
-      $(document).on('click', '.delete-item',
-          function(){
-              $(this).parent().remove();
-          }
-      );
-    }
-)
+
+// JSnack Numeri Primi
+// Scrivi una funzione per stabilire se un numero è primo.
+// Chiedi un numero all’utente e utilizza la funzione per comunicargli se il numero
+// inserito è primo oppure no.
+
+var numero = parseInt(prompt('Dimmi un numero'));
+var numeroPrimo = isNumeroPrimo(numero);
+if (numeroPrimo === false) {
+  console.log('non è un numero primo');
+} else {
+  console.log('è un numero primo');
+}
+
+
+function isNumeroPrimo(numeroDaControllare) {
+    var eUnNumeroPrimo = true;
+    for(var i = 2; i < numeroDaControllare; i++)
+        if(numeroDaControllare % i === 0) {
+          eUnNumeroPrimo = false;
+        }
+  return eUnNumeroPrimo;
+}
