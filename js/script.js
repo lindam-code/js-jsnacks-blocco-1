@@ -325,20 +325,45 @@
 // Chiedi un numero all’utente e utilizza la funzione per comunicargli se il numero
 // inserito è primo oppure no.
 
-var numero = parseInt(prompt('Dimmi un numero'));
-var numeroPrimo = isNumeroPrimo(numero);
-if (numeroPrimo === false) {
-  console.log('non è un numero primo');
-} else {
-  console.log('è un numero primo');
-}
+// var numero = parseInt(prompt('Dimmi un numero'));
+// var numeroPrimo = isNumeroPrimo(numero);
+// if (numeroPrimo === false) {
+//   console.log('non è un numero primo');
+// } else {
+//   console.log('è un numero primo');
+// }
+//
+//
+// function isNumeroPrimo(numeroDaControllare) {
+//     var eUnNumeroPrimo = true;
+//     for(var i = 2; i < numeroDaControllare; i++)
+//         if(numeroDaControllare % i === 0) {
+//           eUnNumeroPrimo = false;
+//         }
+//   return eUnNumeroPrimo;
+// }
 
 
-function isNumeroPrimo(numeroDaControllare) {
-    var eUnNumeroPrimo = true;
-    for(var i = 2; i < numeroDaControllare; i++)
-        if(numeroDaControllare % i === 0) {
-          eUnNumeroPrimo = false;
-        }
-  return eUnNumeroPrimo;
+// JSnack
+// Crea un array vuoto e chiedi all’utente un numero da inserire nell’array.
+// Continua a chiedere i numeri all’utente e a inserirli nell’array fino a quando
+// la somma degli elementi è minore di 50.
+var arrayNumeri = [];
+var somma = sommaArray(arrayNumeri);
+
+while (sommaArray(arrayNumeri) < 50) {
+    var numeroUtente = parseInt(prompt('Dimmi un numero.'));
+    arrayNumeri.push(numeroUtente);
 }
+console.log(arrayNumeri);
+
+// Funzione
+function sommaArray(arrayDaSommare) {
+  var somma = 0;
+  for (var i = 0; i < arrayDaSommare.length; i++) {
+    somma += parseInt(arrayDaSommare[i]);
+  }
+  return somma;
+}
+var sommaDStampare = (sommaArray(arrayNumeri));
+console.log(sommaDStampare);
