@@ -348,22 +348,79 @@
 // Crea un array vuoto e chiedi all’utente un numero da inserire nell’array.
 // Continua a chiedere i numeri all’utente e a inserirli nell’array fino a quando
 // la somma degli elementi è minore di 50.
-var arrayNumeri = [];
-var somma = sommaArray(arrayNumeri);
+// var arrayNumeri = [];
+// var somma = sommaArray(arrayNumeri);
+//
+// while (sommaArray(arrayNumeri) < 50) {
+//     var numeroUtente = parseInt(prompt('Dimmi un numero.'));
+//     arrayNumeri.push(numeroUtente);
+// }
+// console.log(arrayNumeri);
+//
+// // Funzione
+// function sommaArray(arrayDaSommare) {
+//   var somma = 0;
+//   for (var i = 0; i < arrayDaSommare.length; i++) {
+//     somma += parseInt(arrayDaSommare[i]);
+//   }
+//   return somma;
+// }
+// var sommaDStampare = (sommaArray(arrayNumeri));
+// console.log(sommaDStampare);
 
-while (sommaArray(arrayNumeri) < 50) {
-    var numeroUtente = parseInt(prompt('Dimmi un numero.'));
-    arrayNumeri.push(numeroUtente);
-}
-console.log(arrayNumeri);
 
-// Funzione
-function sommaArray(arrayDaSommare) {
-  var somma = 0;
-  for (var i = 0; i < arrayDaSommare.length; i++) {
-    somma += parseInt(arrayDaSommare[i]);
+// Creare due div; uno conterrà numeri dispari di colore rosso e
+// l’altro conterrà numeri pari in verde. Ad ogni click di un bottone
+// chiedere all’API un numero, se è dispari metterlo nel blocco dispari,
+// e se è pari in quello pari.
+// $('.button').click(function(){
+//   $.ajax(
+//     {
+//       url: "https://flynn.boolean.careers/exercises/api/random/int",
+//       method: "GET",
+//       success: function(data,status){
+//         var numero = data.response;
+//         if (numero % 2 === 0) {
+//           $('.square.green').append(numero);
+//         } else {
+//           $('.square.red').append(numero);
+//         };
+//       },
+//       error: function(richiesta, stato, tipoErrore){
+//         alert("Si è verificato l'errore");
+//       }
+//     }
+//   )
+// });
+
+
+// Chiedere all’API 10 nomi da inserire in un array di invitati.
+// Una volta generata la lista chiedere all’utente di dire il proprio nome.
+// Se è uno degli invitati ritornare un messaggio di benvenuto, altrimenti di accesso negato.
+$(document).ready(function(){
+  var arrayNomi = [];
+  for (var i = 0; i < 10; i++) {
+    $.ajax(
+      {
+        url: "https://flynn.boolean.careers/exercises/api/random/name",
+        method: "GET",
+        success: function(data) {
+          var nome = data.response;
+          arrayNomi.push(nome);
+          if (arrayNomi.length === 10) {
+            console.log(arrayNomi);
+            var nomeUtente = prompt('dimmi il tuo nome');
+            if (arrayNomi.includes(nomeUtente)) {
+              alert('ok puoi entrare');
+            } else {
+              alert('mi dispiace non puoi entrare');
+            };
+          }
+        },
+        error: function(){
+          alert("Si è verificato l'errore");
+        }
+      }
+    )
   }
-  return somma;
-}
-var sommaDStampare = (sommaArray(arrayNumeri));
-console.log(sommaDStampare);
+});
